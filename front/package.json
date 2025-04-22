@@ -1,0 +1,15 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "front-end do projeto",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "Eliton Camargo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

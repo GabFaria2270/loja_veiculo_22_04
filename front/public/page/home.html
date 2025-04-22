@@ -1,0 +1,38 @@
+
+<div class="row row-cols-1 row-cols-md-2 justify-content-center" id="listaVeiculos">
+    <script>
+        $(document).ready(function() {
+            let requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+            fetch("http://localhost:3000/veiculo", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                result.forEach(veiculo => {
+                    const card = `
+                        <div class="card m-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="${veiculo.imagem[0]}" class="img-fluid rounded-start" alt="${veiculo.modelo}">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${veiculo.modelo} - ${veiculo.ano}</h5>
+                                        <p class="card-text">${veiculo.descricao}</p>
+                                        <p class="card-text"><strong>Preço:</strong> R$ ${veiculo.preco.toLocaleString()}</p>
+                                        <p class="card-text"><small class="text-body-secondary">Avaliação: ${veiculo.avaliacao} estrelas</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    $('#listaVeiculos').append(card);
+                });
+            })
+            .catch(error => console.log('error', error));
+        });
+    </script>
+    
+</div>

@@ -1,0 +1,205 @@
+{
+    "categoria":[
+        {
+            "id": 1,
+            "nome": "Sedan",
+            "logo": "sedan_logo.png"
+        },
+        {
+            "id": 2,
+            "nome": "Hatch",
+            "logo": "hatch_logo.png"
+        },
+        {
+            "id": 3,
+            "nome": "Picape",
+            "logo": "picape_logo.png"
+        },
+        {
+            "id": 4,
+            "nome": "Moto",
+            "logo": "moto_logo.png"
+        },
+        {
+            "id": 5,
+            "nome": "Caminhonete",
+            "logo": "caminhonete_logo.png"
+        }
+    ],
+    "montadora":[
+        {
+            "id": 1,
+            "nome": "Toyota",
+            "nascionalidade": "Japonesa",
+            "logo": "toyota_logo.png"
+        },
+        {
+            "id": 2,
+            "nome": "Ford",
+            "nascionalidade": "Americana",
+            "logo": "ford_logo.png"
+        },
+        {
+            "id": 3,
+            "nome": "Volkswagen",
+            "nascionalidade": "Alemã",
+            "logo": "volkswagen_logo.png"
+        },
+        {
+            "id": 4,
+            "nome": "Honda",
+            "nascionalidade": "Japonesa",
+            "logo": "honda_logo.png"
+        },
+        {
+            "id": 5,
+            "nome": "Chevrolet",
+            "nascionalidade": "Americana",
+            "logo": "chevrolet_logo.png"
+        }
+    ],
+    "veiculo":[
+        {
+            "id": 1,
+            "modelo": "Corolla",
+            "ano": 2020,
+            "preco": 120000,
+            "descricao": "Sedan confortável e econômico.",
+            "imagem": ["corolla1.png", "corolla2.png", "corolla3.png"],
+            "cambio": "Automático",
+            "cor": "Prata",
+            "quilometragem": 15000,
+            "potencia": 150,
+            "motor": "2.0",
+            "direcao": "Elétrica",
+            "tracao": "Dianteira",
+            "categoriaId": 1,
+            "montadoraId": 1,
+            "destaque": true,
+            "disponivel": true,
+            "avaliacao": 4.5
+        },
+        {
+            "id": 2,
+            "modelo": "Civic",
+            "ano": 2021,
+            "preco": 130000,
+            "descricao": "Sedan esportivo e elegante.",
+            "imagem": ["civic1.png", "civic2.png", "civic3.png"],
+            "cambio": "Manual",
+            "cor": "Preto",
+            "quilometragem": 10000,
+            "potencia": 180,
+            "motor": "2.0 Turbo",
+            "direcao": "Hidráulica",
+            "tracao": "Dianteira",
+            "categoriaId": 1,
+            "montadoraId": 4,
+            "destaque": false,
+            "disponivel": true,
+            "avaliacao": 4.7
+        }
+        ,
+        {
+            "id": 3,
+            "modelo": "Fusca",
+            "ano": 1970,
+            "preco": 30000,
+            "descricao": "Clássico e icônico.",
+            "imagem": ["fusca1.png", "fusca2.png", "fusca3.png"],
+            "cambio": "Manual",
+            "cor": "Amarelo",
+            "quilometragem": 50000,
+            "potencia": 50,
+            "motor": "1.3",
+            "direcao": "Hidráulica",
+            "tracao": "Traseira",
+            "categoriaId": 2,
+            "montadoraId": 3,
+            "destaque": false,
+            "disponivel": true,
+            "avaliacao": 4.0
+        },
+        {
+            "id": 4,
+            "modelo": "F-150",
+            "ano": 2022,
+            "preco": 250000,
+            "descricao": "Picape robusta e potente.",
+            "imagem": ["f150_1.png", "f150_2.png", "f150_3.png"],
+            "cambio": "Automático",
+            "cor": "Branco",
+            "quilometragem": 5000,
+            "potencia": 400,
+            "motor": "5.0",
+            "direcao": "Elétrica",
+            "tracao": "4x4",
+            "categoriaId": 3,
+            "montadoraId": 2,
+            "destaque": true,
+            "disponivel": true,
+            "avaliacao": 4.8
+        },
+        {
+            "id": 5,
+            "modelo": "CB500",
+            "ano": 2021,
+            "preco": 30000,
+            "descricao": "Moto esportiva e ágil.",
+            "imagem": ["cb500_1.png", "cb500_2.png", "cb500_3.png"],
+            "cambio": "Manual",
+            "cor": "Vermelha",
+            "quilometragem": 2000,
+            "potencia": 50,
+            "motor": "500cc",
+            "direcao": "Hidráulica",
+            "tracao": null,
+            "categoriaId": 4,
+            "montadoraId": 4,
+            "destaque": false,
+            "disponivel": true,
+            "avaliacao": 4.6
+        },
+        {
+            "id": 6,
+            "modelo": "Hilux",
+            "ano": 2023,
+            "preco": 300000,
+            "descricao": "Caminhonete potente e resistente.",
+            "imagem": ["hilux_1.png", "hilux_2.png", "hilux_3.png"],
+            "cambio": "Automático",
+            "cor": "Cinza",
+            "quilometragem": 0,
+            "potencia": 200,
+            "motor": "2.8",
+            "direcao": "Elétrica",
+            "tracao": "4x4",
+            "categoriaId": 5,
+            "montadoraId": 1,
+            "destaque": true,
+            "disponivel": true,
+            "avaliacao": 4.9
+        },
+        {
+            "id": 7,
+            "modelo": "Civic",
+            "ano": 2021,
+            "preco": 130000,
+            "descricao": "Sedan esportivo e elegante.",
+            "imagem": ["civic1.png", "civic2.png", "civic3.png"],
+            "cambio": "Manual",
+            "cor": "Preto",
+            "quilometragem": 10000,
+            "potencia": 180,
+            "motor": "2.0 Turbo",
+            "direcao": "Hidráulica",
+            "tracao": "Dianteira",
+            "categoriaId": 1,
+            "montadoraId": 4,
+            "destaque": false,
+            "disponivel": true,
+            "avaliacao": 4.7
+        }
+        
+    ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "api_loja_veiculo",
+  "version": "1.0.0",
+  "description": "Api via json-server para suporte a prototipagem da loja veículo",
+  "main": "db.json",
+  "devDependencies": {},
+  "scripts": {
+    "start": "npx json-server db.json"
+  },
+  "author": "Eliton Camargo de Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}

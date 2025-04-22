@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Sistema SPA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Menu Navbar -->
+    <header id="menu"></header>
+
+
+    <!-- Conteúdo principal -->
+    <main class="container py-4" id="root">
+        <!-- Conteúdo será carregado aqui via JavaScript -->
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-body-tertiary text-center py-1 mt-auto">
+        <div class="container">
+            <p class="mb-1">Siga-nos nas redes sociais:</p>
+            <div>
+                <i class="bi bi-facebook mx-1"></i>
+                <i class="bi bi-twitter mx-1"></i>
+                <i class="bi bi-instagram mx-1"></i>
+            </div>
+            <p class="mt-1 mb-0 text-body-secondary">&copy; 2025 Meu Sistema</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap e ícones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src='/assets/js/roteamento.js'></script>
+    <script src="/components/menu.js"></script>
+    <script>
+        $(document).ready(() => {
+            // Carregar o menu na página            
+            loadMenu('menu','logado');
+            arquivoRoot('root');
+        });
+        
+    </script>
+
+    <script src='/assets/js/alterar_tema.js'></script>
+
+</body>
+
+</html>
