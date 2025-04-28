@@ -1,0 +1,9 @@
+.component-footer{
+    background-color: #f8f9fa;    
+    padding: 1rem;    
+    text-align: center;
+}
+.component-footer i{
+    margin: 0 10px;    
+    cursor: pointer;
+}

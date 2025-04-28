@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="/components/menu/menu.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top position-relative">
+  <div class="container-fluid">
+    <!-- Logo à esquerda -->
+        <div>
+            <button class="btn btn-outline ms-2" id="themeToggle" title="Alternar tema" style="padding-top: 0px;">
+                <i class="bi bi-moon-fill" id="themeIcon"></i>
+            </button>
+            <a class="navbar-brand" href="#">MinhaEmpresa</a>
+        </div>
+
+    <!-- Botão offcanvas (mobile) -->
+    <button id="btnMobile" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Campo de busca centralizado (desktop apenas) -->
+    <form class="d-none d-lg-flex navbar-center" role="search">
+      <div class="input-group">
+        <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+        <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+      </div>
+    </form>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+      </div>
+      <div class="offcanvas-body d-lg-flex justify-content-lg-end align-items-lg-center w-100">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Veículos
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/veiculo/cadastro">Cadastrar</a></li>
+                    <li><a class="dropdown-item" href="/">Listar</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Projetos</a></li>                   
+            <li class="nav-item">
+                <a class="nav-link" href="/login">
+                  <i class="bi bi-box-arrow-in-right"></i> Entrar
+                </a>
+            </li>
+                                 
+        </ul>
+
+        <!-- Campo de busca em mobile -->
+        <form class="d-lg-none mt-3" role="search">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Buscar..." aria-label="Search">
+            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>

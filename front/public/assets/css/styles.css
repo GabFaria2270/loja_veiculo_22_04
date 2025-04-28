@@ -2,16 +2,24 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    max-height: 100vh;
   }
   main {
     flex: 1;
+
   }
-  footer {
-    background-color: #f8f9fa;
-    padding: 1rem;
-    text-align: center;
+
+  body, html {
+    overflow-x: hidden;
   }
-  .social-icons i {
-    margin: 0 10px;
-    cursor: pointer;
-  }
+
+  /* Ajusta a posição do alerta para aparecer abaixo da navbar */
+  .alert {
+    position: fixed; /* Fixa o alerta na tela */
+    top: 70px; /* Ajuste conforme a altura da navbar */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta para o centro */
+    z-index: 1050; /* Garante que o alerta fique acima de outros elementos */
+    width: 90%; /* Ajuste opcional para dispositivos menores */
+    max-width: 500px; /* Limita a largura máxima */
+}
