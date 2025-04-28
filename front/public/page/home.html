@@ -1,6 +1,6 @@
 <div class="row row-cols-1 row-cols-md-2 justify-content-center" id="listaVeiculos">
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             let requestOptions = {
                 method: 'GET',
                 redirect: 'follow'
@@ -9,10 +9,9 @@
             fetch("http://localhost:3000/veiculo", requestOptions)
                 .then(response => response.json())
                 .then(result => {
-                    console.log(result);
                     result.forEach((veiculo, index) => {
-                        const descricaoLimitada = veiculo.descricao.length > 100 
-                            ? veiculo.descricao.substring(0, 100) + '...' 
+                        const descricaoLimitada = veiculo.descricao.length > 100
+                            ? veiculo.descricao.substring(0, 100) + '...'
                             : veiculo.descricao;
 
                         const card = `
@@ -35,12 +34,10 @@
                         $('#listaVeiculos').append(card);
                     });
 
-                    // Adiciona evento de clique nas imagens
-                    $('.veiculo-imagem').on('click', function() {
+                    $('.veiculo-imagem').on('click', function () {
                         const index = $(this).data('index');
                         const veiculo = result[index];
 
-                        // Carregar imagens no carrossel
                         const carrosselImagensDetalhes = $('#carrosselImagensDetalhes');
                         carrosselImagensDetalhes.empty();
                         veiculo.imagem.forEach((imagem, index) => {
@@ -52,13 +49,12 @@
                             carrosselImagensDetalhes.append(item);
                         });
 
-                        // Carregar informações do veículo
                         $('#veiculoTitulo').text(`${veiculo.modelo} - ${veiculo.ano}`);
                         $('#veiculoDescricao').text(veiculo.descricao);
                         $('#veiculoPreco').text(`R$ ${veiculo.preco.toLocaleString()}`);
-                        $('#veiculoCor').text(veiculo.cor);
                         $('#veiculoAno').text(veiculo.ano);
                         $('#veiculoQuilometragem').text(`${veiculo.quilometragem} km`);
+                        $('#veiculoCor').text(veiculo.cor);
                         $('#veiculoPotencia').text(`${veiculo.potencia} cv`);
                         $('#veiculoMotor').text(veiculo.motor);
                         $('#veiculoCambio').text(veiculo.cambio);
@@ -66,14 +62,26 @@
                         $('#veiculoTracao').text(veiculo.tracao);
                         $('#veiculoAvaliacao').text(veiculo.avaliacao);
 
-                        // Abrir o modal
+                        fetch(`http://localhost:3000/categoria/${veiculo.categoriaId}`)
+                            .then(response => response.json())
+                            .then(categoria => {
+                                $('#veiculoCategoria').text(categoria.nome);
+                            })
+                            .catch(error => console.error('Erro ao carregar categoria:', error));
+
+                        fetch(`http://localhost:3000/montadora/${veiculo.montadoraId}`)
+                            .then(response => response.json())
+                            .then(montadora => {
+                                $('#veiculoMontadora').text(montadora.nome);
+                            })
+                            .catch(error => console.error('Erro ao carregar montadora:', error));
+
                         $('#modalVeiculo').modal('show');
                     });
                 })
                 .catch(error => console.log('error', error));
         });
     </script>
-    
 </div>
 
 <div class="modal fade" id="modalVeiculo" tabindex="-1" aria-labelledby="modalVeiculoLabel" aria-hidden="true">
@@ -113,6 +121,8 @@
                             <p><strong>Direção:</strong> <span id="veiculoDirecao"></span></p>
                             <p><strong>Tração:</strong> <span id="veiculoTracao"></span></p>
                             <p><strong>Avaliação:</strong> <span id="veiculoAvaliacao"></span> estrelas</p>
+                            <p><strong>Categoria:</strong> <span id="veiculoCategoria"></span></p>
+                            <p><strong>Montadora:</strong> <span id="veiculoMontadora"></span></p>
                         </div>
                     </div>
                 </div>

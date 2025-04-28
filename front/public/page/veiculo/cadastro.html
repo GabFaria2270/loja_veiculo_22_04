@@ -1,5 +1,7 @@
 <head>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 </head>
 
 <div class="container mt-5">
@@ -21,12 +23,10 @@
                 <label for="preco" class="form-label">Preço</label>
                 <input type="number" class="form-control" id="preco" placeholder="Ex: 30000">
             </div>
-          
             <div class="col-sm-6 col-md-2">
                 <label for="cor" class="form-label">Cor</label>
                 <input type="text" class="form-control" id="cor" placeholder="Ex: Amarelo">
             </div>
-
             <div class="col-sm-6 col-md-2">
                 <label for="quilometragem" class="form-label">Quilometragem</label>
                 <input type="number" class="form-control" id="quilometragem" placeholder="Ex: 50000">
@@ -39,7 +39,6 @@
                 <label for="motor" class="form-label">Motor</label>
                 <input type="text" class="form-control" id="motor" placeholder="Ex: 1.3">
             </div>
-
             <div class="col-sm-6 col-md-4">
                 <label for="cambio" class="form-label">Câmbio</label>
                 <select class="form-select" id="cambio">
@@ -66,7 +65,6 @@
                     <option value="Integral">Integral</option>
                 </select>
             </div>
-
             <div class="col-md-6">
                 <label for="categoriaId" class="form-label">Categoria ID</label>
                 <select class="form-select" id="categoriaId">
@@ -87,7 +85,6 @@
                     <option value="4">Chevrolet</option>
                 </select>
             </div>
-
             <div class="col-md-6">
                 <label for="avaliacao" class="form-label">Avaliação</label>
                 <input type="number" step="0.1" class="form-control" id="avaliacao" placeholder="Ex: 4.0">
@@ -102,12 +99,10 @@
                     <label class="form-check-label" for="disponivel">Disponível</label>
                 </div>
             </div>
-
             <div class="col-md-12">
                 <label for="descricao" class="form-label">Descrição</label>
                 <textarea class="form-control" id="descricao" rows="3" placeholder="Ex: Clássico e icônico."></textarea>
             </div>  
-
             <fieldset>
                 <label class="form-label">Carregue as fotos do seu veículo</label>     
                 <div class="col-md-12" style="display: flex; flex-wrap: wrap;" id="imagensVeiculos">
@@ -115,20 +110,15 @@
                         for="imagem" 
                         class="form-label" style="
                         background-position: center;
-                        /* background-color: red; */
                         background-image: url(https://www.svgrepo.com/show/309379/camera-add.svg);
                         background-size: contain;
-                        /* background-position-x: center; */
                         padding: 75px 50px 25px;
                         background-repeat: round;
                         display: initial;">
                     </label>
                     <input type="file" id="imagem" multiple style="display: none;">
-                    
                 </div>
-
             </fieldset>
-
             <div class="col-12 text-end">
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </div>
@@ -138,83 +128,61 @@
 
 <script>
 $(document).ready(() => {
-
-//**Função para enviar as imagens para o servidor
-const uploadImagens = async (imagens) => {
-    try {
-        let formdata = new FormData();
-        formdata.append("file", imagens);
-
-        let requestOptions = {
-            method: 'POST',
-            body: formdata,
-            redirect: 'follow'
-        };
-
-        const response = await fetch("http://localhost:3037/upload", requestOptions);
-
-        if (!response.ok) {
-            throw new Error(`Erro no upload: ${response.statusText}`);
+    $('#imagensVeiculos').sortable({
+        placeholder: "ui-state-highlight",
+        update: function (event, ui) {
+            console.log('Nova ordem:', $('#imagensVeiculos').sortable('toArray'));
         }
+    });
 
-        const result = await response.json();
-        return result;
+    const uploadImagens = async (imagens) => {
+        try {
+            let formdata = new FormData();
+            formdata.append("file", imagens);
 
-    } catch (error) {
-        console.error('Erro ao fazer upload:', error);
-        throw error; // Propaga o erro para quem chamar a função poder tratar também
-    }
-};
+            let requestOptions = {
+                method: 'POST',
+                body: formdata,
+                redirect: 'follow'
+            };
 
-    const limparFormulario = () => {
-        $('#formVeiculo')[0].reset(); // Reseta todos os campos do formulário
-        $('#categoriaId').val(''); // Limpa o campo de categoria
-        $('#montadoraId').val(''); // Limpa o campo de montadora
-        $('#imagensVeiculos').empty(); // Remove as imagens carregadas
-    };
-    
-    const exibirAlertaSucesso = () => {
-        const alerta = `
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Sucesso!</strong> Veículo cadastrado com sucesso.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        `;
-        $('#alert').html(alerta).removeClass('d-none'); // Insere o alerta no div existente e remove 'd-none'
+            const response = await fetch("http://localhost:3037/upload", requestOptions);
 
-        // Adiciona o evento para resetar o formulário ao fechar o alerta
-        $('.btn-close').on('click', () => {
-            limparFormulario(); // Reseta os campos do formulário
-        });
+            if (!response.ok) {
+                throw new Error(`Erro no upload: ${response.statusText}`);
+            }
+
+            const result = await response.json();
+            return result;
+
+        } catch (error) {
+            console.error('Erro ao fazer upload:', error);
+            throw error;
+        }
     };
 
-
-
-//**Adiciona o evento de change(selecionar uma o mais imagens) ao elemento de imagem
     $('#imagem').on('change', function (e) {
-        const files = e.target.files; // Pega os arquivos selecionados
+        const files = e.target.files;
         const imagensVeiculos = $('#imagensVeiculos');
 
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
             uploadImagens(file)
                 .then(result => {
-                    const imgElement = $('<img>')
-                        .attr('src', result.url) // Supondo que a resposta contenha a URL da imagem
-                        .addClass('img-thumbnail')
-                        .addClass('listaDeFotosVeiculos')
-                        .css({ width: '180px', margin: '5px' });
-                    imagensVeiculos.prepend(imgElement);
+                    console.log('Imagem carregada:', result.url);
+                    const imgElement = $(`
+                        <div class="sortable-item" id="img-${i}">
+                            <img src="${result.url}" class="img-thumbnail listaDeFotosVeiculos" style="width: 180px; margin: 5px;">
+                        </div>
+                    `);
+                    imagensVeiculos.append(imgElement);
                 })
                 .catch(error => {
                     console.error('Erro no upload:', error);
                 });
-
         }
     });
 
-
-//**Função para gerar os anos de modelo para o select
     const loadAnoModelo = () => {
         const currentYear = new Date().getFullYear();
         let ano_modelo = [];
@@ -224,14 +192,12 @@ const uploadImagens = async (imagens) => {
         }
         return ano_modelo;
     };
-    // Adiciona os anos de modelo gerados ao select
-    $("#ano").empty(); // Limpa o select antes de adicionar os novos anos
+
+    $("#ano").empty();
     $("#ano").append(loadAnoModelo());
 
-
-//**Para enviar os dados do formulário para a API de back-end
     $('#formVeiculo').on('submit', function (e) {
-        e.preventDefault(); // Evita o envio padrão do formulário
+        e.preventDefault();
 
         let fotosSelecionadas = [];
         $('.listaDeFotosVeiculos').each(function () {
@@ -274,7 +240,7 @@ const uploadImagens = async (imagens) => {
             .then(response => response.json())
             .then(result => {
                 console.log(result);
-                exibirAlertaSucesso(); // Exibe o alerta de sucesso
+                exibirAlertaSucesso();
             })
             .catch(error => console.log('error', error));
     });
@@ -322,4 +288,23 @@ const uploadImagens = async (imagens) => {
     loadMontadoras();
 
 });
+
+const exibirAlertaSucesso = () => {
+    const alerta = `
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Sucesso!</strong> Veículo cadastrado com sucesso.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    `;
+    $('#alert').html(alerta).removeClass('d-none');
+
+    $('.btn-close').on('click', () => {
+        limparFormulario();
+    });
+};
+
+const limparFormulario = () => {
+    $('#formVeiculo')[0].reset();
+    $('#imagensVeiculos').empty();
+};
 </script>

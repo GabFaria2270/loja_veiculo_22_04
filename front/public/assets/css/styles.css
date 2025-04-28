@@ -13,13 +13,19 @@ body {
     overflow-x: hidden;
   }
 
-  /* Ajusta a posição do alerta para aparecer abaixo da navbar */
   .alert {
-    position: fixed; /* Fixa o alerta na tela */
-    top: 70px; /* Ajuste conforme a altura da navbar */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta para o centro */
-    z-index: 1050; /* Garante que o alerta fique acima de outros elementos */
-    width: 90%; /* Ajuste opcional para dispositivos menores */
-    max-width: 500px; /* Limita a largura máxima */
-}
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .ui-state-highlight {
+    height: 150px;
+    background-color: #f0f0f0;
+    border: 2px dashed #ccc;
+    margin: 5px;
+  }
