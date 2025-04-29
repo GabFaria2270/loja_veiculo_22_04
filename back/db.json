@@ -150,27 +150,50 @@
       ]
     },
     {
-      "id": "5e32",
-      "modelo": "Camaro",
+      "id": "3d5a",
+      "modelo": "BMW 4X4",
       "ano": 2025,
-      "preco": 200000,
-      "descricao": "7777",
-      "cor": "Amarelo",
-      "quilometragem": 500000,
-      "potencia": 100,
-      "motor": "2.0",
-      "cambio": "Automático",
+      "preco": 300000,
+      "descricao": "BMW 4X4",
+      "cor": "Azul",
+      "quilometragem": 3333,
+      "potencia": 32,
+      "motor": "2.1",
+      "cambio": "Manual",
       "direcao": "Elétrica",
       "tracao": "Dianteira",
-      "categoriaId": 2,
-      "montadoraId": 2,
-      "avaliacao": 7,
-      "destaque": false,
+      "categoriaId": 6,
+      "montadoraId": 6,
+      "avaliacao": 4.5,
+      "destaque": true,
       "disponivel": true,
       "imagem": [
-        "http://localhost:3037/uploads/1745860296231.png",
-        "http://localhost:3037/uploads/1745860298999.jpg",
-        "http://localhost:3037/uploads/1745860301842.jpg"
+        "http://localhost:3037/uploads/1745925747498.jpg",
+        "http://localhost:3037/uploads/1745925747495.jpg",
+        "http://localhost:3037/uploads/1745925747492.jpg"
+      ]
+    },
+    {
+      "id": "dfaf",
+      "modelo": "CBR1000RR",
+      "ano": 2025,
+      "preco": 20000,
+      "descricao": "Moto Mil Grau",
+      "cor": "Cinza",
+      "quilometragem": 0,
+      "potencia": 20,
+      "motor": "1.5",
+      "cambio": "Automático",
+      "direcao": "Hidráulica",
+      "tracao": "Traseira",
+      "categoriaId": 4,
+      "montadoraId": 4,
+      "avaliacao": 5,
+      "destaque": true,
+      "disponivel": true,
+      "imagem": [
+        "http://localhost:3037/uploads/1745925970828.png",
+        "http://localhost:3037/uploads/1745925970831.png"
       ]
     }
   ]

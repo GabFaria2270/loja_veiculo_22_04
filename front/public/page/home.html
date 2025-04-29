@@ -61,6 +61,8 @@
                         $('#veiculoDirecao').text(veiculo.direcao);
                         $('#veiculoTracao').text(veiculo.tracao);
                         $('#veiculoAvaliacao').text(veiculo.avaliacao);
+                        $('#veiculoDisponivel').text(veiculo.disponivel ? 'Sim' : 'Não');
+                        $('#veiculoDestaque').text(veiculo.destaque ? 'Sim' : 'Não');
 
                         fetch(`http://localhost:3000/categoria/${veiculo.categoriaId}`)
                             .then(response => response.json())
@@ -123,6 +125,8 @@
                             <p><strong>Avaliação:</strong> <span id="veiculoAvaliacao"></span> estrelas</p>
                             <p><strong>Categoria:</strong> <span id="veiculoCategoria"></span></p>
                             <p><strong>Montadora:</strong> <span id="veiculoMontadora"></span></p>
+                            <p><strong>Disponível:</strong> <span id="veiculoDisponivel"></span></p>
+                            <p><strong>Destaque:</strong> <span id="veiculoDestaque"></span></p>
                         </div>
                     </div>
                 </div>
