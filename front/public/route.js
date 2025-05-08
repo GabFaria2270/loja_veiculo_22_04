@@ -1,11 +1,11 @@
 const rotas = [
     {
         'path': '',
-        'component': '/page/home.html'
+        'component': '/page/index.html'
     },
     {
         'path': '/',
-        'component': '/page/home.html'
+        'component': '/page/index.html'
     },
     {
         'path': '/teste',

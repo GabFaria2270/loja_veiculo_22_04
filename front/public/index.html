@@ -18,6 +18,14 @@
     <!-- Conteúdo principal -->
     <main class="container-fluid py-4 overflow-auto" id="root">
         <!-- Conteúdo será carregado aqui via JavaScript -->
+        <div class="text-center">
+            <h2>Bem-vindo ao Meu Sistema SPA</h2>
+            <p>Faça login ou cadastre-se para continuar.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <button class="btn btn-primary" onclick="login()">Faça Login</button>
+                <button class="btn btn-secondary" onclick="register()">Cadastre-se</button>
+            </div>
+        </div>
     </main>
 
     <!-- Rodapé -->
@@ -33,8 +41,8 @@
  
     <script type="module">
         import { loadMenu } from '/components/menu/menu.js';
+        import { loadPage } from '/route.js'; // Mover a importação do loadFooter para cima
         import { loadFooter } from '/components/footer/footer.js';
-        import { loadPage } from '/route.js';
         //import { loadTheme } from '/assets/js/alterar_tema.js';
 
 
