@@ -59,7 +59,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/">
+                        <a class="dropdown-item" href="#" onclick="fazerLogout()">
                             <i class="bi bi-box-arrow-right"></i>
                             <span>Sair</span>
                         </a>
@@ -80,4 +80,16 @@
   </div>
 </nav>
 
+<script>
+    function fazerLogout() {
+        // Remove os dados do usuário do localStorage
+        localStorage.removeItem('userData');
+        
+        // Redireciona para a página inicial
+        window.location.href = '/';
+        
+        // Evita que o navegador siga o link href
+        return false;
+    }
+</script>
 <script src='/components/menu/alterar_tema.js'></script>

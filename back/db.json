@@ -1,4 +1,13 @@
 {
+  "usuario": [
+    {
+      "id": "1",
+      "fullname": "Gabriel Faria",
+      "email": "gabriel@gmail.com",
+      "senha": "adm13",
+      "admin": true
+    }
+  ],
   "categoria": [
     {
       "id": "1",
@@ -24,11 +33,6 @@
       "id": "5",
       "nome": "Caminhonete",
       "logo": "caminhonete_logo.png"
-    },
-    {
-      "id": "6",
-      "nome": "4X4",
-      "logo": "4x4_logo.png"
     }
   ],
   "montadora": [
@@ -61,12 +65,6 @@
       "nome": "Chevrolet",
       "nascionalidade": "Americana",
       "logo": "chevrolet_logo.png"
-    },
-    {
-      "id": "6",
-      "nome": "BMW",
-      "nascionalidade": "Americana",
-      "logo": "BMW_logo.png"
     }
   ],
   "veiculo": [
@@ -100,100 +98,117 @@
       ]
     },
     {
-      "id": "5deb",
-      "modelo": "Fusca",
+      "id": "5657",
+      "modelo": "honda",
       "ano": 2025,
-      "preco": 100000,
-      "descricao": "O Fusca Azul Sedan é um ícone do automobilismo, com seu design atemporal e características que o tornam único. Sua carroceria compacta e arredondada, pintada em um azul vibrante, transmite uma sensação de nostalgia e charme. O modelo tem uma frente marcada por faróis grandes e redondos, que lhe conferem um ar amigável e simpático, enquanto a traseira, com sua tampa do motor levemente inclinada, exibe um perfil simples, porém elegante. O interior, minimalista e funcional, é caracterizado por um painel de linhas simples, com um volante circular que remete aos tempos antigos. Além disso, o Fusca é conhecido pela sua robustez e resistência, características que o tornaram um dos carros mais queridos ao redor do mundo, sendo símbolo de durabilidade e confiança. Mesmo com o passar das décadas, o Fusca Azul Sedan continua a fascinar pela sua beleza discreta e pela história que carrega consigo, tornando-se uma verdadeira relíquia sobre rodas.",
-      "cor": "Ciano",
-      "quilometragem": 10000,
-      "potencia": 100,
-      "motor": "1.9",
-      "cambio": "Automático",
-      "direcao": "Elétrica",
-      "tracao": "Traseira",
-      "categoriaId": 1,
-      "montadoraId": 1,
-      "avaliacao": 6,
-      "destaque": true,
-      "disponivel": true,
-      "imagem": [
-        "http://localhost:3037/uploads/1745852431350.jpg",
-        "http://localhost:3037/uploads/1745852428446.jpg",
-        "http://localhost:3037/uploads/1745852417778.jpg",
-        "http://localhost:3037/uploads/1745852413979.jpeg"
-      ]
-    },
-    {
-      "id": "efea",
-      "modelo": "Camaro",
-      "ano": 2025,
-      "preco": 200000,
-      "descricao": "O Chevrolet Camaro é um dos carros esportivos mais emblemáticos dos Estados Unidos, conhecido por sua performance impressionante e design agressivo. Desde sua primeira versão, lançada em 1966, o Camaro tem sido um símbolo de potência e estilo. Com linhas marcantes e uma frente musculosa, o Camaro apresenta um capô longo e um conjunto de faróis afilados, que lhe conferem uma aparência imponente. A grade frontal, com o logotipo da Chevrolet, é envolta por um par de entradas de ar, reforçando sua natureza de alto desempenho. A traseira do Camaro é igualmente robusta, com lanternas largas e contornadas que completam o visual esportivo do modelo.\n\nPor dentro, o Camaro mantém o foco na experiência do motorista, com um cockpit esportivo e comandos bem posicionados, garantindo conforto e controle. O painel é dominado por mostradores digitais, que combinam estilo e tecnologia. Disponível em várias versões, o Camaro oferece desde motores V6 de boa performance até motores V8 potentes, sendo um carro capaz de agradar tanto os puristas dos muscle cars quanto os entusiastas modernos.",
-      "cor": "Amarelo",
-      "quilometragem": 500000,
-      "potencia": 100,
-      "motor": "2.0",
-      "cambio": "Automático",
-      "direcao": "Elétrica",
-      "tracao": "Integral",
-      "categoriaId": 2,
-      "montadoraId": 5,
-      "avaliacao": 7,
-      "destaque": true,
-      "disponivel": true,
-      "imagem": [
-        "http://localhost:3037/uploads/1745852891207.jpg",
-        "http://localhost:3037/uploads/1745852891210.jpg",
-        "http://localhost:3037/uploads/1745852891204.jpg",
-        "http://localhost:3037/uploads/1745852891200.jpg"
-      ]
-    },
-    {
-      "id": "3d5a",
-      "modelo": "BMW 4X4",
-      "ano": 2025,
-      "preco": 300000,
-      "descricao": "BMW 4X4",
-      "cor": "Azul",
-      "quilometragem": 3333,
-      "potencia": 32,
-      "motor": "2.1",
-      "cambio": "Manual",
-      "direcao": "Elétrica",
-      "tracao": "Dianteira",
-      "categoriaId": 6,
-      "montadoraId": 6,
-      "avaliacao": 4.5,
-      "destaque": true,
-      "disponivel": true,
-      "imagem": [
-        "http://localhost:3037/uploads/1745925747498.jpg",
-        "http://localhost:3037/uploads/1745925747495.jpg",
-        "http://localhost:3037/uploads/1745925747492.jpg"
-      ]
-    },
-    {
-      "id": "dfaf",
-      "modelo": "CBR1000RR",
-      "ano": 2025,
-      "preco": 20000,
-      "descricao": "Moto Mil Grau",
-      "cor": "Cinza",
-      "quilometragem": 0,
-      "potencia": 20,
-      "motor": "1.5",
+      "preco": 1222222,
+      "descricao": "dfgdfgdfg",
+      "cor": "red",
+      "quilometragem": 121212,
+      "potencia": 1212,
+      "motor": "1212",
       "cambio": "Automático",
       "direcao": "Hidráulica",
       "tracao": "Traseira",
-      "categoriaId": 4,
-      "montadoraId": 4,
+      "categoriaId": 2,
+      "montadoraId": 1,
+      "avaliacao": 5,
+      "destaque": false,
+      "disponivel": true,
+      "imagem": [
+        "http://localhost:3037/uploads/1745861689886.jpg"
+      ]
+    },
+    {
+      "id": "3288",
+      "modelo": "pablo",
+      "ano": 2023,
+      "preco": 12000,
+      "descricao": "fjdhfjshfkfgkdf8iweireiywher7",
+      "cor": "verde",
+      "quilometragem": 50000,
+      "potencia": 150,
+      "motor": "1.9",
+      "cambio": "Automático",
+      "direcao": "Hidráulica",
+      "tracao": "Dianteira",
+      "categoriaId": 2,
+      "montadoraId": 2,
       "avaliacao": 5,
       "destaque": true,
       "disponivel": true,
       "imagem": [
-        "http://localhost:3037/uploads/1745925970828.png",
-        "http://localhost:3037/uploads/1745925970831.png"
+        "http://localhost:3037/uploads/1745922212110.png"
+      ]
+    },
+    {
+      "id": "01f6",
+      "modelo": "piblo",
+      "ano": 2025,
+      "preco": 1333333,
+      "descricao": "carroooo",
+      "cor": "verde",
+      "quilometragem": 40000,
+      "potencia": 120,
+      "motor": "1.9",
+      "cambio": "Manual",
+      "direcao": "Hidráulica",
+      "tracao": "Traseira",
+      "categoriaId": 4,
+      "montadoraId": 3,
+      "avaliacao": 5,
+      "destaque": false,
+      "disponivel": true,
+      "imagem": [
+        "http://localhost:3037/uploads/1745922340710.png"
+      ]
+    },
+    {
+      "id": "5434",
+      "modelo": "maquil",
+      "ano": 2019,
+      "preco": 40000,
+      "descricao": "O carro é um modelo esportivo de alto desempenho, com um design moderno e aerodinâmico. Sua carroceria, composta por linhas fluidas e elegantes, combina um tom metálico de azul profundo com detalhes em preto brilhante, o que confere um ar sofisticado e agressivo ao mesmo tempo. A frente do veículo é imponente, com faróis de LED em formato angular e uma grade frontal que transmite robustez e potência. O capô, ligeiramente mais baixo, destaca os contornos musculosos que ajudam a dar um aspecto dinâmico, como se estivesse pronto para acelerar a qualquer momento.\n\nNas laterais, as rodas de aro grande são envoltas por pneus de alta performance, projetados para garantir estabilidade em alta velocidade. O interior do carro é luxuoso e funcional, com bancos de couro refinado, acabamentos em alumínio e uma central multimídia de última geração. O volante é de couro, com comandos de fácil acesso, e o painel de instrumentos é digital, oferecendo informações precisas de forma clara e moderna.\n\nSob o capô, o motor turboalimentado entrega uma potência impressionante, capaz de acelerar de 0 a 100 km/h em apenas alguns segundos. O carro é equipado com suspensão esportiva, garantindo uma condução firme e precisa, ideal para quem busca performance e emoção nas estradas. Em suma, é um carro para quem valoriza não apenas o design, mas também a experiência de dirigir.",
+      "cor": "vermelho",
+      "quilometragem": 12000,
+      "potencia": 50,
+      "motor": "12.0",
+      "cambio": "Manual",
+      "direcao": "Mecânica",
+      "tracao": "Traseira",
+      "categoriaId": 2,
+      "montadoraId": 2,
+      "avaliacao": 3,
+      "destaque": true,
+      "disponivel": true,
+      "imagem": [
+        "http://localhost:3037/uploads/1745924288329.webp",
+        "http://localhost:3037/uploads/1745924249303.png"
+      ]
+    },
+    {
+      "id": "936b",
+      "modelo": "carro teste ",
+      "ano": 2025,
+      "preco": 12000,
+      "descricao": "O carro é um modelo esportivo de alto desempenho, com um design moderno e aerodinâmico. Sua carroceria, composta por linhas fluidas e elegantes, combina um tom metálico de azul profundo com detalhes em preto brilhante, o que confere um ar sofisticado e agressivo ao mesmo tempo. A frente do veículo é imponente, com faróis de LED em formato angular e uma grade frontal que transmite robustez e potência. O capô, ligeiramente mais baixo, destaca os contornos musculosos que ajudam a dar um aspecto dinâmico, como se estivesse pronto para acelerar a qualquer momento.\n\nNas laterais, as rodas de aro grande são envoltas por pneus de alta performance, projetados para garantir estabilidade em alta velocidade. O interior do carro é luxuoso e funcional, com bancos de couro refinado, acabamentos em alumínio e uma central multimídia de última geração. O volante é de couro, com comandos de fácil acesso, e o painel de instrumentos é digital, oferecendo informações precisas de forma clara e moderna.\n\nSob o capô, o motor turboalimentado entrega uma potência impressionante, capaz de acelerar de 0 a 100 km/h em apenas alguns segundos. O carro é equipado com suspensão esportiva, garantindo uma condução firme e precisa, ideal para quem busca performance e emoção nas estradas. Em suma, é um carro para quem valoriza não apenas o design, mas também a experiência de dirigir.",
+      "cor": "azul",
+      "quilometragem": 50000,
+      "potencia": 240,
+      "motor": "12.0",
+      "cambio": "Manual",
+      "direcao": "Elétrica",
+      "tracao": "Traseira",
+      "categoriaId": 1,
+      "montadoraId": 1,
+      "avaliacao": 3,
+      "destaque": false,
+      "disponivel": true,
+      "imagem": [
+        "http://localhost:3037/uploads/1745925046376.jfif",
+        "http://localhost:3037/uploads/1745925059191.webp",
+        "http://localhost:3037/uploads/1745925049374.jfif",
+        "http://localhost:3037/uploads/1745925054169.png"
       ]
     }
   ]

@@ -13,19 +13,5 @@ body {
     overflow-x: hidden;
   }
 
-  .alert {
-    position: fixed;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1050;
-    width: 90%;
-    max-width: 500px;
-  }
 
-  .ui-state-highlight {
-    height: 150px;
-    background-color: #f0f0f0;
-    border: 2px dashed #ccc;
-    margin: 5px;
-  }
+  

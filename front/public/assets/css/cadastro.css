@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fdf6e3, #f5deb3); /* Tons de bege */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5a4636; /* Marrom suave */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background: #f8f1e7; /* Bege claro */
+    padding: 10px;
+    border-bottom: 1px solid #d2b48c; /* Bege escuro */
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: #8b4513; /* Marrom médio */
+    transition: background 0.3s, color 0.3s;
+}
+
+.tab.active {
+    background: #d2b48c; /* Bege escuro */
+    color: #fff;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #5a4636; /* Marrom suave */
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #8b4513; /* Marrom médio */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #d2b48c; /* Bege escuro */
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #c19a6b; /* Dourado suave */
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #c19a6b; /* Dourado suave */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #a67b5b; /* Dourado mais escuro */
+}
