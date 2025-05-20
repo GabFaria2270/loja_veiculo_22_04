@@ -29,13 +29,10 @@ $(document).ready(() => {
             console.log('Usuário encontrado:', usuarioEncontrado);
 
             if (usuarioEncontrado) {
-                // Definir o tipo de usuário no localStorage
-                // 1 para admin, 2 para usuário comum
                 const tipoUsuario = usuarioEncontrado.admin ? 1 : 2;
                 localStorage.setItem('userData', tipoUsuario);
-                
+                localStorage.setItem('userDataInfo', JSON.stringify(usuarioEncontrado)); // Salva o usuário completo
                 alert('Login realizado com sucesso!');
-                // Redireciona para outra página
                 window.location.href = '/home';
             } else {
                 alert('E-mail ou senha inválidos.');

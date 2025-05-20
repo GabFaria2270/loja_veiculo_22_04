@@ -48,23 +48,24 @@
             <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Projetos</a></li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-gear" ></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <i>
-                        <a class="dropdown-item" href="/">
-                            <i class="bi bi-person-circle"></i>
-                            <span>admin@gmail.com</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#" onclick="fazerLogout()">
-                            <i class="bi bi-box-arrow-right"></i>
-                            <span>Sair</span>
-                        </a>
-                    </li>
-                </ul>
+              <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="img-perfil-usuario rounded-circle me-2" src="https://via.placeholder.com/40" alt="Perfil" width="32" height="32" style="object-fit:cover;">  
+                <span class="d-none d-lg-inline" id="user-nome-menu">Nome do Usuário</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="#" id="btnAbrirModalImagemUsuario">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Editar perfil</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" onclick="fazerLogout()">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Sair</span>
+                  </a>
+                </li>
+              </ul>
             </li>          
         </ul>
 
@@ -80,6 +81,27 @@
   </div>
 </nav>
 
+<!-- Modal para editar/adicionar imagem do usuário -->
+<div class="modal fade" id="modalImagemUsuario" tabindex="-1" aria-labelledby="modalImagemUsuarioLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalImagemUsuarioLabel">Alterar Imagem de Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="imgPreviewUsuario" src="https://via.placeholder.com/120" class="rounded-circle mb-3" width="120" height="120" alt="Imagem do usuário">
+        <input type="text" id="inputNomeUsuario" class="form-control mb-3" placeholder="Seu nome">
+        <input type="file" id="inputImagemUsuario" accept="image/*" class="form-control mb-3">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnSalvarImagemUsuario">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
     function fazerLogout() {
         // Remove os dados do usuário do localStorage
@@ -93,3 +115,4 @@
     }
 </script>
 <script src='/components/menu/alterar_tema.js'></script>
+<script src='/components/menu/menu.js'></script>

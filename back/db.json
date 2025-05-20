@@ -2,10 +2,38 @@
   "usuario": [
     {
       "id": "1",
-      "fullname": "Gabriel Faria",
+      "fullname": "Gabriel",
       "email": "gabriel@gmail.com",
       "senha": "adm13",
-      "admin": true
+      "admin": true,
+      "imagem": "http://localhost:3037/uploads/1747740927768.png"
+    },
+    {
+      "id": "700a",
+      "fullname": "Pibloooo",
+      "email": "piblo@gmail.com",
+      "telefone": "1599999",
+      "senha": "piblo20",
+      "admin": false,
+      "imagem": "http://localhost:3037/uploads/1747741096699.png"
+    },
+    {
+      "id": "1664",
+      "fullname": "Jonathan",
+      "email": "jojo@gmail.com",
+      "telefone": "1599888",
+      "senha": "jojo17",
+      "admin": false,
+      "imagem": "http://localhost:3037/uploads/1747739754361.png"
+    },
+    {
+      "id": "c998",
+      "fullname": "Leoooo",
+      "email": "leo@gmail.com",
+      "telefone": "157777",
+      "senha": "leo11",
+      "admin": false,
+      "imagem": "http://localhost:3037/uploads/1747740830068.png"
     }
   ],
   "categoria": [
@@ -98,117 +126,51 @@
       ]
     },
     {
-      "id": "5657",
-      "modelo": "honda",
+      "id": "c42c",
+      "modelo": "CB300",
       "ano": 2025,
-      "preco": 1222222,
-      "descricao": "dfgdfgdfg",
-      "cor": "red",
-      "quilometragem": 121212,
-      "potencia": 1212,
-      "motor": "1212",
-      "cambio": "Automático",
-      "direcao": "Hidráulica",
-      "tracao": "Traseira",
-      "categoriaId": 2,
-      "montadoraId": 1,
-      "avaliacao": 5,
-      "destaque": false,
-      "disponivel": true,
-      "imagem": [
-        "http://localhost:3037/uploads/1745861689886.jpg"
-      ]
-    },
-    {
-      "id": "3288",
-      "modelo": "pablo",
-      "ano": 2023,
-      "preco": 12000,
-      "descricao": "fjdhfjshfkfgkdf8iweireiywher7",
-      "cor": "verde",
-      "quilometragem": 50000,
-      "potencia": 150,
-      "motor": "1.9",
-      "cambio": "Automático",
+      "preco": 344444,
+      "descricao": "A Honda CB 300 é uma motocicleta que combina desempenho, estilo e confiabilidade, sendo ideal tanto para deslocamentos urbanos quanto para passeios mais longos. Com um design esportivo e agressivo, a CB 300 chama atenção pelo farol dianteiro afilado, carenagens aerodinâmicas e detalhes em preto fosco que reforçam sua identidade robusta.\n\nEquipada com um motor monocilíndrico de 300cc, a moto entrega potência e torque suficientes para garantir acelerações rápidas e retomadas eficientes, proporcionando uma condução ágil e segura. Seu câmbio de 6 marchas e a injeção eletrônica garantem respostas precisas ao comando do acelerador e melhor eficiência no consumo de combustível.\n\nA suspensão dianteira telescópica e a traseira monoamortecida oferecem estabilidade em curvas e conforto em terrenos irregulares. O sistema de freios a disco nas duas rodas, com ABS, assegura frenagens mais seguras, mesmo em situações de emergência.\n\nO painel digital completo exibe informações essenciais como velocímetro, conta-giros, indicador de marchas e nível de combustível. O banco em dois níveis proporciona conforto tanto para o piloto quanto para o garupa, tornando a CB 300 uma excelente opção para quem busca versatilidade, esportividade e economia em duas rodas.",
+      "cor": "Azul",
+      "quilometragem": 10000,
+      "potencia": 40,
+      "motor": "1.5",
+      "cambio": "Manual",
       "direcao": "Hidráulica",
       "tracao": "Dianteira",
-      "categoriaId": 2,
-      "montadoraId": 2,
-      "avaliacao": 5,
-      "destaque": true,
-      "disponivel": true,
-      "imagem": [
-        "http://localhost:3037/uploads/1745922212110.png"
-      ]
-    },
-    {
-      "id": "01f6",
-      "modelo": "piblo",
-      "ano": 2025,
-      "preco": 1333333,
-      "descricao": "carroooo",
-      "cor": "verde",
-      "quilometragem": 40000,
-      "potencia": 120,
-      "motor": "1.9",
-      "cambio": "Manual",
-      "direcao": "Hidráulica",
-      "tracao": "Traseira",
       "categoriaId": 4,
-      "montadoraId": 3,
+      "montadoraId": 2,
       "avaliacao": 5,
       "destaque": false,
       "disponivel": true,
       "imagem": [
-        "http://localhost:3037/uploads/1745922340710.png"
+        "http://localhost:3037/uploads/1747736542456.png",
+        "http://localhost:3037/uploads/1747736542462.png",
+        "http://localhost:3037/uploads/1747736542460.png"
       ]
     },
     {
-      "id": "5434",
-      "modelo": "maquil",
-      "ano": 2019,
-      "preco": 40000,
-      "descricao": "O carro é um modelo esportivo de alto desempenho, com um design moderno e aerodinâmico. Sua carroceria, composta por linhas fluidas e elegantes, combina um tom metálico de azul profundo com detalhes em preto brilhante, o que confere um ar sofisticado e agressivo ao mesmo tempo. A frente do veículo é imponente, com faróis de LED em formato angular e uma grade frontal que transmite robustez e potência. O capô, ligeiramente mais baixo, destaca os contornos musculosos que ajudam a dar um aspecto dinâmico, como se estivesse pronto para acelerar a qualquer momento.\n\nNas laterais, as rodas de aro grande são envoltas por pneus de alta performance, projetados para garantir estabilidade em alta velocidade. O interior do carro é luxuoso e funcional, com bancos de couro refinado, acabamentos em alumínio e uma central multimídia de última geração. O volante é de couro, com comandos de fácil acesso, e o painel de instrumentos é digital, oferecendo informações precisas de forma clara e moderna.\n\nSob o capô, o motor turboalimentado entrega uma potência impressionante, capaz de acelerar de 0 a 100 km/h em apenas alguns segundos. O carro é equipado com suspensão esportiva, garantindo uma condução firme e precisa, ideal para quem busca performance e emoção nas estradas. Em suma, é um carro para quem valoriza não apenas o design, mas também a experiência de dirigir.",
-      "cor": "vermelho",
-      "quilometragem": 12000,
-      "potencia": 50,
-      "motor": "12.0",
-      "cambio": "Manual",
-      "direcao": "Mecânica",
-      "tracao": "Traseira",
-      "categoriaId": 2,
-      "montadoraId": 2,
-      "avaliacao": 3,
-      "destaque": true,
-      "disponivel": true,
-      "imagem": [
-        "http://localhost:3037/uploads/1745924288329.webp",
-        "http://localhost:3037/uploads/1745924249303.png"
-      ]
-    },
-    {
-      "id": "936b",
-      "modelo": "carro teste ",
+      "id": "0b36",
+      "modelo": "Falcon XR Turbo",
       "ano": 2025,
-      "preco": 12000,
-      "descricao": "O carro é um modelo esportivo de alto desempenho, com um design moderno e aerodinâmico. Sua carroceria, composta por linhas fluidas e elegantes, combina um tom metálico de azul profundo com detalhes em preto brilhante, o que confere um ar sofisticado e agressivo ao mesmo tempo. A frente do veículo é imponente, com faróis de LED em formato angular e uma grade frontal que transmite robustez e potência. O capô, ligeiramente mais baixo, destaca os contornos musculosos que ajudam a dar um aspecto dinâmico, como se estivesse pronto para acelerar a qualquer momento.\n\nNas laterais, as rodas de aro grande são envoltas por pneus de alta performance, projetados para garantir estabilidade em alta velocidade. O interior do carro é luxuoso e funcional, com bancos de couro refinado, acabamentos em alumínio e uma central multimídia de última geração. O volante é de couro, com comandos de fácil acesso, e o painel de instrumentos é digital, oferecendo informações precisas de forma clara e moderna.\n\nSob o capô, o motor turboalimentado entrega uma potência impressionante, capaz de acelerar de 0 a 100 km/h em apenas alguns segundos. O carro é equipado com suspensão esportiva, garantindo uma condução firme e precisa, ideal para quem busca performance e emoção nas estradas. Em suma, é um carro para quem valoriza não apenas o design, mas também a experiência de dirigir.",
-      "cor": "azul",
+      "preco": 200000,
+      "descricao": "O Falcon XR Turbo 2024 é um sedan premium que une sofisticação, tecnologia de ponta e desempenho esportivo. Seu design marcante exibe linhas elegantes e agressivas, com faróis full LED em formato de seta e uma grade frontal cromada que transmite imponência. O capô alongado e os vincos bem definidos destacam o caráter dinâmico do veículo, enquanto as rodas de liga leve de 19 polegadas completam o visual moderno e robusto.\\n\\nNo interior, o acabamento refinado inclui couro premium costurado à mão, detalhes em fibra de carbono e iluminação ambiente personalizável. A central multimídia touchscreen de 12 polegadas integra sistemas como Android Auto, Apple CarPlay e comandos por voz, além de um painel digital com gráficos configuráveis.\\n\\nSob o capô, o XR Turbo traz um motor 2.5 turbo de 285 cv, com transmissão automática de 8 marchas e tração integral. A aceleração de 0 a 100 km/h ocorre em apenas 6,2 segundos, garantindo uma condução empolgante sem abrir mão do conforto. Os modos de condução ajustáveis permitem alternar entre o desempenho esportivo e a eficiência no dia a dia.\\n\\nEquipado com sistemas avançados de assistência ao condutor, como piloto automático adaptativo, frenagem autônoma de emergência e assistente de permanência em faixa, o Falcon XR Turbo oferece não apenas prazer ao dirigir, mas também alto nível de segurança. É a escolha ideal para quem deseja luxo, potência e inovação em um único veículo.",
+      "cor": "Roxo",
       "quilometragem": 50000,
-      "potencia": 240,
-      "motor": "12.0",
-      "cambio": "Manual",
+      "potencia": 50,
+      "motor": "2.0",
+      "cambio": "Automático",
       "direcao": "Elétrica",
-      "tracao": "Traseira",
+      "tracao": "Integral",
       "categoriaId": 1,
-      "montadoraId": 1,
-      "avaliacao": 3,
+      "montadoraId": 2,
+      "avaliacao": 5,
       "destaque": false,
       "disponivel": true,
       "imagem": [
-        "http://localhost:3037/uploads/1745925046376.jfif",
-        "http://localhost:3037/uploads/1745925059191.webp",
-        "http://localhost:3037/uploads/1745925049374.jfif",
-        "http://localhost:3037/uploads/1745925054169.png"
+        "http://localhost:3037/uploads/1747736689922.png",
+        "http://localhost:3037/uploads/1747736689920.png",
+        "http://localhost:3037/uploads/1747736689918.png"
       ]
     }
   ]
