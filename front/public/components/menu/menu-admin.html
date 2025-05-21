@@ -49,7 +49,11 @@
             <li class="nav-item"><a class="nav-link" href="#">Projetos</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img class="img-perfil-usuario rounded-circle me-2" src="https://via.placeholder.com/40" alt="Perfil" width="32" height="32" style="object-fit:cover;">  
+                <!-- Exemplo para ambos os menus -->
+                <span class="perfil-usuario-container me-2" style="display: flex; align-items: center;">
+                  <i class="bi bi-person-circle perfil-usuario-icone" style="font-size: 21px; color: #000000;"></i>
+                  <img class="img-perfil-usuario rounded-circle d-none" src="" alt="Perfil" width="32" height="32" style="object-fit:cover;">
+                </span>
                 <span class="d-none d-lg-inline" id="user-nome-menu">Nome do Usuário</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">

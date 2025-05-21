@@ -117,7 +117,6 @@ export const loadMenu = async (containerMenuId) => {
 
 function atualizarPerfilNavbar() {
     const userDataInfo = JSON.parse(localStorage.getItem('userDataInfo') || '{}');
-    // Use um seletor mais específico se necessário, por exemplo:
     const $container = $('.perfil-usuario-container');
     const $icone = $container.find('.perfil-usuario-icone');
     const $img = $container.find('.img-perfil-usuario');

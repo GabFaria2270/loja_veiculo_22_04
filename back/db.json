@@ -6,16 +6,16 @@
       "email": "gabriel@gmail.com",
       "senha": "adm13",
       "admin": true,
-      "imagem": "http://localhost:3037/uploads/1747740927768.png"
+      "imagem": "http://localhost:3037/uploads/1747840024264.png"
     },
     {
       "id": "700a",
-      "fullname": "Pibloooo",
+      "fullname": "Piblo",
       "email": "piblo@gmail.com",
       "telefone": "1599999",
       "senha": "piblo20",
       "admin": false,
-      "imagem": "http://localhost:3037/uploads/1747741096699.png"
+      "imagem": "http://localhost:3037/uploads/1747839830134.png"
     },
     {
       "id": "1664",

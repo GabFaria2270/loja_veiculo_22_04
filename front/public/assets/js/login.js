@@ -6,27 +6,21 @@ $(document).ready(() => {
         const email = $('#email').val();
         const senha = $('#password').val();
 
-        console.log('E-mail digitado:', email);
-        console.log('Senha digitada:', senha);
-
         try {
             // Faz uma requisição GET para buscar todos os usuários cadastrados
             const resposta = await fetch("http://localhost:3000/usuario");
-            console.log('Resposta da requisição:', resposta);
 
             if (!resposta.ok) {
                 throw new Error('Erro ao buscar usuários.');
             }
 
             const usuarios = await resposta.json(); // Converte a resposta para JSON
-            console.log('Usuários cadastrados:', usuarios);
 
             // Verifica se o usuário existe e a senha está correta (sem encriptação)
             const usuarioEncontrado = usuarios.find(
                 usuario => usuario.email === email && usuario.senha === senha
             );
 
-            console.log('Usuário encontrado:', usuarioEncontrado);
 
             if (usuarioEncontrado) {
                 const tipoUsuario = usuarioEncontrado.admin ? 1 : 2;
