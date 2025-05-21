@@ -1,19 +1,33 @@
 // Importa os módulos necessários
-import express from 'express';     // Framework web para criar o servidor
-import multer from 'multer';       // Middleware para lidar com uploads de arquivos
-import path from 'path';           // Módulo para trabalhar com caminhos de arquivos
-import cors from 'cors';           // Middleware para permitir requisições externas (CORS)
+import express from "express"; // Framework web para criar o servidor
+import multer from "multer"; // Middleware para lidar com uploads de arquivos
+import path from "path"; // Módulo para trabalhar com caminhos de arquivos
+import cors from "cors"; // Middleware para permitir requisições externas (CORS)
+import fs from "fs"; // Módulo para manipulação de sistema de arquivos
 
-const app = express();             // Cria a aplicação Express
+const app = express(); // Cria a aplicação Express
 
-app.use(cors());                   // Libera o acesso à API de qualquer origem (CORS)
+app.use(cors()); // Libera o acesso à API de qualquer origem (CORS)
 
-app.use('/uploads', express.static('uploads')); // Torna a pasta 'uploads/' acessível via URL
+app.use("/uploads", express.static("uploads")); // Torna a pasta 'uploads/' acessível via URL
 
 // Configuração de armazenamento do multer
 const storage = multer.diskStorage({
   // Define o diretório onde os arquivos serão salvos
-  destination: 'uploads/',
+  destination: (req, file, cb) => {
+    // Extrai o tipo da query da requisição (veiculos, usuarios, etc.)
+    const tipo = req.query.tipo || "geral";
+
+    // Define o caminho da pasta
+    const uploadPath = `uploads/${tipo}`;
+
+    // Cria a pasta se não existir
+    if (!fs.existsSync(uploadPath)) {
+      fs.mkdirSync(uploadPath, { recursive: true });
+    }
+
+    cb(null, uploadPath);
+  },
 
   // Define o nome do arquivo salvo
   filename: (req, file, cb) => {
@@ -21,7 +35,7 @@ const storage = multer.diskStorage({
     const uniqueName = Date.now() + path.extname(file.originalname);
 
     cb(null, uniqueName); // Salva o nome gerado
-  }
+  },
 });
 
 const port = 3037; // Porta em que o servidor será executado
@@ -30,16 +44,22 @@ const port = 3037; // Porta em que o servidor será executado
 const upload = multer({ storage });
 
 // Rota para upload de arquivos
-app.post('/upload', upload.single('file'), (req, res) => {
+app.post("/upload", upload.single("file"), (req, res) => {
+  const tipo = req.query.tipo || "geral";
+
   // Gera a URL pública do arquivo que acabou de ser enviado
-  const fileUrl = `http://localhost:${port}/uploads/${req.file.filename}`;
-  
+  const fileUrl = `http://localhost:${port}/uploads/${tipo}/${req.file.filename}`;
+
   // Retorna a URL em formato JSON
   res.json({ url: fileUrl });
 });
 
 // Inicia o servidor na porta definida
 app.listen(port, () => {
-  console.log('Servidor de upload rodando em http://localhost:' + port);
-  console.log('Para testar, use o Postman ou Insomnia para enviar um arquivo para http://localhost:' + port + '/upload');
+  console.log("Servidor de upload rodando em http://localhost:" + port);
+  console.log(
+    "Para testar, use o Postman ou Insomnia para enviar um arquivo para http://localhost:" +
+      port +
+      "/upload"
+  );
 });

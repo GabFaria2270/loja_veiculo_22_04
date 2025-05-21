@@ -6,7 +6,7 @@
       "email": "gabriel@gmail.com",
       "senha": "adm13",
       "admin": true,
-      "imagem": "http://localhost:3037/uploads/1747840024264.png"
+      "imagem": "http://localhost:3037/uploads/usuarios/1747840024264.png"
     },
     {
       "id": "700a",
@@ -15,7 +15,7 @@
       "telefone": "1599999",
       "senha": "piblo20",
       "admin": false,
-      "imagem": "http://localhost:3037/uploads/1747839830134.png"
+      "imagem": "http://localhost:3037/uploads/usuarios/1747839830134.png"
     },
     {
       "id": "1664",
@@ -24,7 +24,7 @@
       "telefone": "1599888",
       "senha": "jojo17",
       "admin": false,
-      "imagem": "http://localhost:3037/uploads/1747739754361.png"
+      "imagem": "http://localhost:3037/uploads/usuarios/1747739754361.png"
     },
     {
       "id": "c998",
@@ -33,7 +33,7 @@
       "telefone": "157777",
       "senha": "leo11",
       "admin": false,
-      "imagem": "http://localhost:3037/uploads/1747740830068.png"
+      "imagem": "http://localhost:3037/uploads/usuarios/1747740830068.png"
     }
   ],
   "categoria": [
@@ -115,14 +115,14 @@
       "destaque": true,
       "disponivel": true,
       "imagem": [
-        "http://localhost:3037/uploads/1745774001781.jpg",
-        "http://localhost:3037/uploads/1745774001779.jpg",
-        "http://localhost:3037/uploads/1745774001781.jpg",
-        "http://localhost:3037/uploads/1745774001782.jpg",
-        "http://localhost:3037/uploads/1745773996806.jpg",
-        "http://localhost:3037/uploads/1745773996807.jpg",
-        "http://localhost:3037/uploads/1745773996808.jpg",
-        "http://localhost:3037/uploads/1745773996809.jpg"
+        "http://localhost:3037/uploads/veiculos/1745774001781.jpg",
+        "http://localhost:3037/uploads/veiculos/1745774001779.jpg",
+        "http://localhost:3037/uploads/veiculos/1745774001781.jpg",
+        "http://localhost:3037/uploads/veiculos/1745774001782.jpg",
+        "http://localhost:3037/uploads/veiculos/1745773996806.jpg",
+        "http://localhost:3037/uploads/veiculos/1745773996807.jpg",
+        "http://localhost:3037/uploads/veiculos/1745773996808.jpg",
+        "http://localhost:3037/uploads/veiculos/1745773996809.jpg"
       ]
     },
     {
@@ -144,9 +144,9 @@
       "destaque": false,
       "disponivel": true,
       "imagem": [
-        "http://localhost:3037/uploads/1747736542456.png",
-        "http://localhost:3037/uploads/1747736542462.png",
-        "http://localhost:3037/uploads/1747736542460.png"
+        "http://localhost:3037/uploads/veiculos/1747736542456.png",
+        "http://localhost:3037/uploads/veiculos/1747736542462.png",
+        "http://localhost:3037/uploads/veiculos/1747736542460.png"
       ]
     },
     {
@@ -168,9 +168,9 @@
       "destaque": false,
       "disponivel": true,
       "imagem": [
-        "http://localhost:3037/uploads/1747736689922.png",
-        "http://localhost:3037/uploads/1747736689920.png",
-        "http://localhost:3037/uploads/1747736689918.png"
+        "http://localhost:3037/uploads/veiculos/1747736689922.png",
+        "http://localhost:3037/uploads/veiculos/1747736689920.png",
+        "http://localhost:3037/uploads/veiculos/1747736689918.png"
       ]
     }
   ]
