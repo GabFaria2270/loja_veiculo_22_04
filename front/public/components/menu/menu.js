@@ -69,29 +69,28 @@ const userProfileManager = {
   async uploadProfileImage(file) {
     if (!file) return null;
 
+    const userData = this.getUserData();
     const formData = new FormData();
     formData.append("file", file);
+    // NÃO precisa enviar userId no body, só na query!
+    formData.append("oldImageUrl", userData.imagem || "");
 
-    try {
-      console.log("Enviando imagem para upload...");
-      const upload = await fetch("http://localhost:3037/upload?tipo=usuarios", {
+    const upload = await fetch(
+      `http://localhost:3037/upload?tipo=usuarios&userId=${userData.id || ""}`,
+      {
         method: "POST",
         body: formData,
-      });
-
-      if (!upload.ok) {
-        throw new Error(
-          `Erro no upload: ${upload.status} - ${upload.statusText}`
-        );
       }
+    );
 
-      const result = await upload.json();
-      console.log("Upload bem-sucedido:", result);
-      return result.url;
-    } catch (error) {
-      console.error("Erro no upload de imagem:", error);
-      return null;
+    if (!upload.ok) {
+      throw new Error(
+        `Erro no upload: ${upload.status} - ${upload.statusText}`
+      );
     }
+
+    const result = await upload.json();
+    return result.url;
   },
 
   // Salva as alterações do perfil no backend

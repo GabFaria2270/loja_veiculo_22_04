@@ -6,7 +6,7 @@
       "email": "gabriel@gmail.com",
       "senha": "adm13",
       "admin": true,
-      "imagem": "http://localhost:3037/uploads/usuarios/1747840024264.png"
+      "imagem": "http://localhost:3037/uploads/usuarios/1747869888676.jpg"
     },
     {
       "id": "700a",
@@ -15,7 +15,7 @@
       "telefone": "1599999",
       "senha": "piblo20",
       "admin": false,
-      "imagem": "http://localhost:3037/uploads/usuarios/1747839830134.png"
+      "imagem": ""
     },
     {
       "id": "1664",
@@ -24,7 +24,7 @@
       "telefone": "1599888",
       "senha": "jojo17",
       "admin": false,
-      "imagem": "http://localhost:3037/uploads/usuarios/1747739754361.png"
+      "imagem": ""
     },
     {
       "id": "c998",
@@ -33,7 +33,7 @@
       "telefone": "157777",
       "senha": "leo11",
       "admin": false,
-      "imagem": "http://localhost:3037/uploads/usuarios/1747740830068.png"
+      "imagem": ""
     }
   ],
   "categoria": [
