@@ -187,8 +187,15 @@ function setupProfileEventHandlers() {
       changes.fullname = novoNome;
     }
 
-    // Faz upload da nova imagem se foi selecionada
-    if (fileInput && fileInput.files && fileInput.files.length > 0) {
+    // Só faz upload se o usuário realmente selecionou uma nova imagem
+    if (
+      fileInput &&
+      fileInput.files &&
+      fileInput.files.length > 0 &&
+      fileInput.files[0].name !== "" // Só faz upload se o input não está vazio
+    ) {
+      // Verifica se a imagem selecionada é diferente da atual (por URL)
+      // Como não temos o nome do arquivo original salvo, só faz upload se o usuário selecionou algo novo
       console.log("Enviando nova imagem de perfil");
       const novaImagemUrl = await userProfileManager.uploadProfileImage(
         fileInput.files[0]
@@ -202,6 +209,10 @@ function setupProfileEventHandlers() {
     }
 
     // Salva as alterações
+    if (Object.keys(changes).length === 0) {
+      alert("Nenhuma alteração feita.");
+      return;
+    }
     const result = await userProfileManager.saveProfileChanges(userId, changes);
 
     if (result.success) {

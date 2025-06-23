@@ -2,9 +2,6 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-
-
-
 // Middleware para redirecionar HTTPS para HTTP (opcional)
 app.use((req, res, next) => {
     if (req.secure) {

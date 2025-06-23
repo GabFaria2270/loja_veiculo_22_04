@@ -2,11 +2,11 @@
   "usuario": [
     {
       "id": "1",
-      "fullname": "Gabrielll",
+      "fullname": "Gabriel",
       "email": "gabriel@gmail.com",
       "senha": "adm13",
       "admin": true,
-      "imagem": "http://localhost:3037/uploads/usuarios/1748302169192.jpg"
+      "imagem": "http://localhost:3037/uploads/usuarios/1750717998202.jpg"
     },
     {
       "id": "700a",
@@ -15,7 +15,7 @@
       "telefone": "1599999",
       "senha": "piblo20",
       "admin": false,
-      "imagem": "http://localhost:3037/uploads/usuarios/1748302047775.jpg"
+      "imagem": ""
     },
     {
       "id": "1664",
@@ -34,6 +34,15 @@
       "senha": "leo11",
       "admin": false,
       "imagem": ""
+    },
+    {
+      "id": "a4eb",
+      "fullname": "Amanda Faria",
+      "email": "amanda@gmail.com",
+      "telefone": "123456789",
+      "senha": "amanda19",
+      "admin": false,
+      "imagem": "http://localhost:3037/uploads/usuarios/1750718368903.jpg"
     }
   ],
   "categoria": [

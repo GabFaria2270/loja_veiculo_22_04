@@ -1,158 +1,202 @@
 <!-- Modal para exibir detalhes do veículo -->
-<div class="modal fade" id="modalVeiculo" tabindex="-1" aria-labelledby="modalVeiculoLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalVeiculoLabel">Detalhes do Veículo</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Carrossel de imagens -->
-                <div id="carouselVeiculo" class="carousel slide mb-4" data-bs-ride="carousel">
-                    <div class="carousel-inner" id="carouselImagens">
-                        <!-- Imagens serão adicionadas dinamicamente -->
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselVeiculo" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselVeiculo" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Próximo</span>
-                    </button>
-                </div>
-                <!-- Informações do veículo -->
-                <div class="mt-3">
-                    <h5 id="modalModelo"></h5>
-                    <p id="modalDescricao"></p>
-                    <p><strong>Preço:</strong> R$ <span id="modalPreco"></span></p>
-                    <p><strong>Ano:</strong> <span id="modalAno"></span></p>
-                    <p><strong>Cor:</strong> <span id="modalCor"></span></p>
-                    <p><strong>Quilometragem:</strong> <span id="modalQuilometragem"></span> km</p>
-                    <p><strong>Potência:</strong> <span id="modalPotencia"></span> cv</p>
-                    <p><strong>Motor:</strong> <span id="modalMotor"></span></p>
-                    <p><strong>Câmbio:</strong> <span id="modalCambio"></span></p>
-                    <p><strong>Direção:</strong> <span id="modalDirecao"></span></p>
-                    <p><strong>Tração:</strong> <span id="modalTracao"></span></p>
-                    <p><strong>Avaliação:</strong> <span id="modalAvaliacao"></span> estrelas</p>
-                </div>
-            </div>
+<div
+  class="modal fade"
+  id="modalVeiculo"
+  tabindex="-1"
+  aria-labelledby="modalVeiculoLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg"> <!-- Alterado de modal-fullscreen para modal-lg -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalVeiculoLabel">Detalhes do Veículo</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- Carrossel de imagens -->
+        <div
+          id="carouselVeiculo"
+          class="carousel slide mb-4"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner" id="carouselImagens">
+            <!-- Imagens serão adicionadas dinamicamente -->
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselVeiculo"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselVeiculo"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
         </div>
+        <!-- Informações do veículo -->
+        <div class="mt-3">
+          <h5 id="modalModelo"></h5>
+          <p id="modalDescricao"></p>
+          <p><strong>Preço:</strong> R$ <span id="modalPreco"></span></p>
+          <p><strong>Ano:</strong> <span id="modalAno"></span></p>
+          <p><strong>Cor:</strong> <span id="modalCor"></span></p>
+          <p>
+            <strong>Quilometragem:</strong>
+            <span id="modalQuilometragem"></span> km
+          </p>
+          <p><strong>Potência:</strong> <span id="modalPotencia"></span> cv</p>
+          <p><strong>Motor:</strong> <span id="modalMotor"></span></p>
+          <p><strong>Câmbio:</strong> <span id="modalCambio"></span></p>
+          <p><strong>Direção:</strong> <span id="modalDirecao"></span></p>
+          <p><strong>Tração:</strong> <span id="modalTracao"></span></p>
+          <p>
+            <strong>Avaliação:</strong>
+            <span id="modalAvaliacao"></span> estrelas
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
-<div class="row row-cols-1 row-cols-md-2 justify-content-center" id="listaVeiculos">
-    <script>
-        $(document).ready(function() {
-            let requestOptions = {
-                method: 'GET',
-                redirect: 'follow'
-            };
+<div
+  class="row row-cols-1 row-cols-md-2 justify-content-center"
+  id="listaVeiculos"
+>
+  <script>
+    $(document).ready(function () {
+      let requestOptions = {
+        method: "GET",
+        redirect: "follow",
+      };
 
-            fetch("http://localhost:3000/veiculo", requestOptions)
-            .then(response => response.json())
-            .then(result => {
-                result.forEach(veiculo => {
-                    // Limita a descrição a 100 caracteres
-                    const descricaoLimitada = veiculo.descricao && veiculo.descricao.length > 100 
-                        ? veiculo.descricao.substring(0, 100) + '...' 
-                        : veiculo.descricao || 'Descrição não disponível';
+      fetch("http://localhost:3000/veiculo", requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          result.forEach((veiculo) => {
+            // Limita a descrição a 100 caracteres
+            const descricaoLimitada =
+              veiculo.descricao && veiculo.descricao.length > 100
+                ? veiculo.descricao.substring(0, 100) + "..."
+                : veiculo.descricao || "Descrição não disponível";
 
-                    // Verifica se há imagens disponíveis
-                    const imagemPrincipal = veiculo.imagem && veiculo.imagem.length > 0 
-                        ? veiculo.imagem[0] 
-                        : 'https://via.placeholder.com/150'; // URL de uma imagem padrão caso não haja imagens
+            // Verifica se há imagens disponíveis
+            const imagemPrincipal =
+              veiculo.imagem && veiculo.imagem.length > 0
+                ? veiculo.imagem[0]
+                : "https://via.placeholder.com/150"; // URL de uma imagem padrão caso não haja imagens
 
-                    const card = `
-                        <div class="card m-3" style="max-width: 540px;" data-id="${veiculo.id}">
+            const card = `
+                        <div class="card m-3" style="max-width: 540px;" data-id="${
+                          veiculo.id
+                        }">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="${imagemPrincipal}" class="img-fluid rounded-start" alt="${veiculo.modelo}">
+                                    <img src="${imagemPrincipal}" class="img-fluid rounded-start" alt="${
+              veiculo.modelo
+            }">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">${veiculo.modelo} - ${veiculo.ano}</h5>
+                                        <h5 class="card-title">${
+                                          veiculo.modelo
+                                        } - ${veiculo.ano}</h5>
                                         <p class="card-text">${descricaoLimitada}</p>
                                         <p class="card-text"><strong>Preço:</strong> R$ ${veiculo.preco.toLocaleString()}</p>
-                                        <p class="card-text"><small class="text-body-secondary">Avaliação: ${veiculo.avaliacao} estrelas</small></p>
+                                        <p class="card-text"><small class="text-body-secondary">Avaliação: ${
+                                          veiculo.avaliacao
+                                        } estrelas</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     `;
-                    $('#listaVeiculos').append(card);
-                });
+            $("#listaVeiculos").append(card);
+          });
 
-                // Adiciona evento de clique nos cards
-                $('#listaVeiculos').on('click', '.card', function() {
-                    const id = String($(this).data('id')); // Converte o ID para string
-                    const veiculo = result.find(v => String(v.id) === id); // Garante que a comparação seja feita como string
-                    abrirModalVeiculo(veiculo);
-                });
-            })
-            .catch(error => console.log('error', error));
-        });
+          // Adiciona evento de clique nos cards
+          $("#listaVeiculos").on("click", ".card", function () {
+            const id = String($(this).data("id")); // Converte o ID para string
+            const veiculo = result.find((v) => String(v.id) === id); // Garante que a comparação seja feita como string
+            abrirModalVeiculo(veiculo);
+          });
+        })
+        .catch((error) => console.log("error", error));
+    });
 
-        // Função para abrir o modal com os detalhes do veículo
-        const abrirModalVeiculo = (veiculo) => {
-            // Preenche o título e informações do modal
-            $('#modalModelo').text(`${veiculo.modelo} - ${veiculo.ano}`);
-            $('#modalDescricao').text(veiculo.descricao);
-            $('#modalPreco').text(veiculo.preco.toLocaleString());
-            $('#modalAno').text(veiculo.ano);
-            $('#modalCor').text(veiculo.cor);
-            $('#modalQuilometragem').text(veiculo.quilometragem);
-            $('#modalPotencia').text(veiculo.potencia);
-            $('#modalMotor').text(veiculo.motor);
-            $('#modalCambio').text(veiculo.cambio);
-            $('#modalDirecao').text(veiculo.direcao);
-            $('#modalTracao').text(veiculo.tracao);
-            $('#modalAvaliacao').text(veiculo.avaliacao);
+    // Função para abrir o modal com os detalhes do veículo
+    const abrirModalVeiculo = (veiculo) => {
+      // Preenche o título e informações do modal
+      $("#modalModelo").text(`${veiculo.modelo} - ${veiculo.ano}`);
+      $("#modalDescricao").text(veiculo.descricao);
+      $("#modalPreco").text(veiculo.preco.toLocaleString());
+      $("#modalAno").text(veiculo.ano);
+      $("#modalCor").text(veiculo.cor);
+      $("#modalQuilometragem").text(veiculo.quilometragem);
+      $("#modalPotencia").text(veiculo.potencia);
+      $("#modalMotor").text(veiculo.motor);
+      $("#modalCambio").text(veiculo.cambio);
+      $("#modalDirecao").text(veiculo.direcao);
+      $("#modalTracao").text(veiculo.tracao);
+      $("#modalAvaliacao").text(veiculo.avaliacao);
 
-            // Preenche o carrossel de imagens
-            const carouselImagens = $('#carouselImagens');
-            carouselImagens.empty(); // Limpa imagens anteriores
-            if (veiculo.imagem && veiculo.imagem.length > 0) {
-                veiculo.imagem.forEach((img, index) => {
-                    const activeClass = index === 0 ? 'active' : '';
-                    const item = `
+      // Preenche o carrossel de imagens
+      const carouselImagens = $("#carouselImagens");
+      carouselImagens.empty(); // Limpa imagens anteriores
+      if (veiculo.imagem && veiculo.imagem.length > 0) {
+        veiculo.imagem.forEach((img, index) => {
+          const activeClass = index === 0 ? "active" : "";
+          const item = `
                         <div class="carousel-item ${activeClass}">
                             <img src="${img}" class="d-block w-100" alt="${veiculo.modelo}">
                         </div>
                     `;
-                    carouselImagens.append(item);
-                });
-            } else {
-                // Adiciona uma imagem padrão se não houver imagens
-                const item = `
+          carouselImagens.append(item);
+        });
+      } else {
+        // Adiciona uma imagem padrão se não houver imagens
+        const item = `
                     <div class="carousel-item active">
                         <img src="https://via.placeholder.com/150" class="d-block w-100" alt="Imagem não disponível">
                     </div>
                 `;
-                carouselImagens.append(item);
-            }
+        carouselImagens.append(item);
+      }
 
-            // Abre o modal
-            $('#modalVeiculo').modal('show');
-        };
-    </script>
+      // Abre o modal
+      $("#modalVeiculo").modal("show");
+    };
+  </script>
 </div>
 
 <style>
-    #carouselImagens img {
-        max-width: 100%; /* Limita a largura da imagem ao tamanho do contêiner */
-        max-height: 70vh; /* Limita a altura da imagem a 70% da altura da viewport */
-        object-fit: contain; /* Garante que a imagem seja redimensionada proporcionalmente */
-        margin: 0 auto; /* Centraliza a imagem */
-    }
+  #carouselImagens img {
+    max-width: 100%; /* Limita a largura da imagem ao tamanho do contêiner */
+    max-height: 70vh; /* Limita a altura da imagem a 70% da altura da viewport */
+    object-fit: contain; /* Garante que a imagem seja redimensionada proporcionalmente */
+    margin: 0 auto; /* Centraliza a imagem */
+  }
 
-    .carousel {
-        margin-bottom: 20px; /* Adiciona espaço entre o carrossel e o texto */
-    }
+  .carousel {
+    margin-bottom: 20px; /* Adiciona espaço entre o carrossel e o texto */
+  }
 
-    /* Estilo para os botões do carrossel */
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-color: black; /* Define a cor preta para os ícones */
-    }
+  /* Estilo para os botões do carrossel */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: black; /* Define a cor preta para os ícones */
+  }
 </style>
